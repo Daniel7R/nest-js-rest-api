@@ -9,7 +9,7 @@
 - `npx @nestjs/cli new name`
 
 
-## To create controllers you must run the following command
+## Create controllers you must run the following command
 
 - `npx @nest/cli generate controller name`
 
@@ -17,7 +17,21 @@
     
     - `npx @nest/cli generate controller name --flat`
 
-# To create a service
+# Create a service
 
 ## You must execute the following command
 - `npx @nestjs/cli s services/products --flat`
+
+# Validate Parameters
+
+## You must install the following dependencies:
+
+- `npm i class-validator class-transformer`
+
+### These dependencies help us to validate data
+
+# Reuse code
+
+## You must install the following dependency:
+
+- `npm i @nestjs/maped-types`

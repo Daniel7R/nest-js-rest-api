@@ -9,14 +9,16 @@ import {
     Delete,
     HttpStatus,
     HttpCode,
-    ParseIntPipe
+    // ParseIntPipe
 } from "@nestjs/common";
 import { ProductsService } from "src/services/products.service";
-import { Response } from "express";
+// import { Response } from "express";
+import { ParseIntPipe } from "src/common/parse-int.pipe";
+import { CreateProductDto, UpdateProductDto } from "src/dtos/products.dtos";
 
 @Controller("products")
 export class ProductsController {
-    constructor(private productsService: ProductsService) { }
+    constructor(private productsService: ProductsService) {}
     @Get("")
     home() {
         return this.productsService.findAll();
@@ -40,12 +42,12 @@ export class ProductsController {
     }
 
     @Post()
-    create(@Body() payload: any) {
+    create(@Body() payload: CreateProductDto) {
         return this.productsService.create(payload);
     }
 
-    @Put(':id')
-    update(@Param('id') id: string, @Body() payload: any) {
+    @Put(":id")
+    update(@Param("id") id: string, @Body() payload: UpdateProductDto) {
         return this.productsService.update(+id, payload);
     }
 
