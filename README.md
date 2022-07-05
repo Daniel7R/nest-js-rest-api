@@ -35,3 +35,32 @@
 ## You must install the following dependency:
 
 - `npm i @nestjs/maped-types`
+
+# Config Module
+
+## This is used to configure environment variables(use Dotenv), first of all, you must install the following package:
+
+- `npm i @nestjs/config`
+
+## After you install that package, you have to create the .env file to save your environment variables (Remember to ignore this file in your repository)
+
+## After you have created that .env file, in the file app.module, you have to import that package;
+
+- `import { ConfigModule } from "@nestjs/config" `
+
+## After import the package, we have to import that in the imports of the module:
+
+- `@Module({ imports: [UsersModule,ProductsModule,HttpModule, DatabaseModule,ConfigModule.forRoot({envFilePath: ".env",isGlobal: true,}),],})`
+
+
+## To use that, you have to import the service:
+
+- `import { ConfigService } from "@nesjs/config"; `
+
+## The next step is instance the import in the constructor of the service:
+
+- `constructor(private productsService: ProductsService, private configService: ConfigService) {}`
+
+## And it's really simple to use, you only get the variables of the following way: 
+
+- `this.configService.get("HERE GOES THE NAME OF THE VARIABLE INSTANCED IN THE .ENV FILE THAT YOU WANT TO GET")`
