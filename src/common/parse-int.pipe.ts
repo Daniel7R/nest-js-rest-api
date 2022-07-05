@@ -3,7 +3,7 @@ import {
     BadRequestException,
     Injectable,
     PipeTransform,
-} from '@nestjs/common';
+} from "@nestjs/common";
 
 @Injectable()
 export class ParseIntPipe implements PipeTransform {
