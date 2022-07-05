@@ -11,11 +11,11 @@
 
 ## Create controllers you must run the following command
 
-- `npx @nest/cli generate controller name`
+- `npx @nestjs/cli generate controller name`
 
 - ### The previus command creates a file in a folder with the name specified, to skip that, you can run the following command: 
     
-    - `npx @nest/cli generate controller name --flat`
+    - `npx @nestjs/cli generate controller name --flat`
 
 # Create a service
 
