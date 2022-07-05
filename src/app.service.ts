@@ -9,7 +9,7 @@ export class AppService {
         @Inject(config.KEY) private configService: ConfigType<typeof config>,
     ) {}
     getHello(): string {
-        console.log(this.tasks);
+        // console.log(this.tasks);
         return `Hola mundo! ${this.configService.apiKey}`;
     }
 }

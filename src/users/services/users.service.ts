@@ -21,7 +21,7 @@ export class UsersService {
     ];
 
     findAll() {
-        console.log(this.configService.get("API_KEY"));
+        // console.log(this.configService.get("API_KEY"));
         return this.users;
     }
 
