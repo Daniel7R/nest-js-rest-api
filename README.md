@@ -64,3 +64,25 @@
 ## And it's really simple to use, you only get the variables of the following way: 
 
 - `this.configService.get("HERE GOES THE NAME OF THE VARIABLE INSTANCED IN THE .ENV FILE THAT YOU WANT TO GET")`
+
+# Automatic Documentation with Swagger
+
+## You must install the packages to use Swagger UI:
+
+- `npm i @nesjs/swagger swagger-ui-express`
+
+## In the main.ts file you must import the following modules from `@nestjs/swagger`:
+
+- `import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';`
+
+## In the config before the `await app.listen(port number)`, you must add the following document configuration:
+
+- `const config = new DocumentBuilder().setTitle("API").setDescription("Platzi Store").setVersion("1.0").build();`
+
+## After stablish the config of the document Builder you must configure the Swagger module:
+
+- `const document = SwaggerModule.createDocument(app, config);`
+
+## And at the end you must setup the Swagger Module with the previus stablished config:
+
+- `SwaggerModule.setup("docs", app, document);`
