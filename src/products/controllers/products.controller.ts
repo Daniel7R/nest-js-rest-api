@@ -54,9 +54,24 @@ export class ProductsController {
     update(@Param("id") id: number, @Body() payload: UpdateProductDto) {
         return this.productsService.update(id, payload);
     }
+    @Put(":id/category/:categoryId")
+    async updateCategoriesByProduct(
+        @Param("id") id: number,
+        @Param("categoryId") categoryId: number,
+    ) {
+        return this.productsService.addCategoryToProduct(id, categoryId);
+    }
 
     @Delete("/:id")
     delete(@Param("id") id: number) {
         return this.productsService.delete(id);
+    }
+
+    @Delete("/:id/category/:categoryId")
+    deleteCategory(
+        @Param("id") id: number,
+        @Param("categoryId", ParseIntPipe) categoryId: number,
+    ) {
+        return this.productsService.removeCategoryByProduct(id, categoryId);
     }
 }
