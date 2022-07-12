@@ -11,7 +11,7 @@ import { Order } from "./order.entity";
 
 import { User } from "./user.entity";
 
-@Entity()
+@Entity({ name: "customers" })
 export class Customer {
     @PrimaryGeneratedColumn()
     id: number;
@@ -28,12 +28,14 @@ export class Customer {
     @CreateDateColumn({
         type: "timestamptz",
         default: () => "CURRENT_TIMESTAMP",
+        name: "create_at",
     })
     createAt: Date;
 
     @UpdateDateColumn({
         type: "timestamptz",
         default: () => "CURRENT_TIMESTAMP",
+        name: "updated_at",
     })
     updatedAt: Date;
 
